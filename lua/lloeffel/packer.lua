@@ -20,6 +20,10 @@ return require('packer').startup(function(use)
 			vim.cmd('colorscheme onedark')
 		end
 	})
+    use ({
+        'ellisonleao/gruvbox.nvim',
+        as = 'gruvbox',
+    })
 
 	--Tree-sitter
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
@@ -40,10 +44,25 @@ return require('packer').startup(function(use)
 	use({'neovim/nvim-lspconfig'})
 	use({'hrsh7th/nvim-cmp'})
 	use({'hrsh7th/cmp-nvim-lsp'})
-
+    use({'hrsh7th/cmp-buffer'})
 	--Mason
 	use{
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 	}
+
+    --snippets
+    use({
+        "L3MON4D3/LuaSnip",
+        tag = "v2.*",
+        run = "make install_jsregexp"
+    })
+
+    --lualine
+    use({'nvim-tree/nvim-web-devicons'})
+    use{
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true}
+    }
 end)
+

@@ -7,19 +7,12 @@ lspconfig_defaults.capabilities = vim.tbl_deep_extend(
 	require('cmp_nvim_lsp').default_capabilities()
 )
 
-
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = cmp.mapping.preset.insert({
-})
-
-
-
 vim.api.nvim_create_autocmd('LspAttach', {
 	desc = 'LSP actions',
 	callback = function(event)
 		--keybinds
-		local opts = {buffer = bufnr, remap = false}	
+		local opts = {buffer = event.buf}
+
 		vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 		vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
 		vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
@@ -35,7 +28,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {'lua_ls', 'rust_analyzer', 'eslint'}, 
+	ensure_installed = {'lua_ls', 'rust_analyzer', 'eslint', 'clangd'}, 
 	handlers = {
 		function(server_name)
 			require('lspconfig')[server_name].setup({})
@@ -47,12 +40,14 @@ require('mason-lspconfig').setup({
 					Lua = {
 						runtime = {
 							version = 'LuaJIT',
+                            path = {"lua/?.lua","lua/?/init.lua"},
 						},
 						diagnostics = {
 							globals = {'vim'},
 						},
 						workspace =  {
 							library = {vim.env.VIMRUNTIME},
+                            checkThirdParty = false,
 						},
 					},
 				},
@@ -61,21 +56,47 @@ require('mason-lspconfig').setup({
 	},
 })
 
+local cmp = require('cmp')
+require('luasnip.loaders.from_vscode').lazy_load()
+
 cmp.setup({
+    preselect = 'item',
+    completion = {
+        completopt = 'menu,menuone,noinsert'
+    },
 	sources = {
 		{name = 'nvim_lsp'},
-		{name = 'buffer'}
+		{name = 'buffer'},
+        {name = 'luasnip'},
 	},
 	snippet = {
 		expand = function(args)
-			vim.snippet.expand(args.body)
+            require('luasnip').lsp_expand(args.body)
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-		['<C-y>'] = cmp.mapping.confirm({ select = true }),
-		["<C-Space>"] = cmp.mapping.complete(),		
+        --window nav
+		['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+		['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
+		--docs nav
+        ['<C-w>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-s>'] = cmp.mapping.scroll_docs(4),
+
+		['<Tab>'] = cmp.mapping(function(fallback)
+			local col = vim.fn.col('.') - 1
+	  
+			if cmp.visible() then
+			  cmp.select_next_item({behavior = 'select'})
+			elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+			  fallback()
+			else
+			  cmp.complete()
+			end
+		  end, {'i', 's'}),
+	  
+		  -- Go to previous item
+		['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
 	}),
 })
 
