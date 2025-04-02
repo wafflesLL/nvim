@@ -12,7 +12,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(event)
 		--keybinds
 		local opts = {buffer = event.buf}
-
 		vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 		vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
 		vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
@@ -85,7 +84,6 @@ cmp.setup({
 
 		['<Tab>'] = cmp.mapping(function(fallback)
 			local col = vim.fn.col('.') - 1
-	  
 			if cmp.visible() then
 			  cmp.select_next_item({behavior = 'select'})
 			elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
@@ -94,7 +92,6 @@ cmp.setup({
 			  cmp.complete()
 			end
 		  end, {'i', 's'}),
-	  
 		  -- Go to previous item
 		['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
 	}),
