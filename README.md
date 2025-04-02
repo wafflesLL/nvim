@@ -25,5 +25,5 @@
 24. jjjj(enter)(enter)j(enter)
 25. :so
 26. :PackerSync
-27. q!
-28. q!
+27. :q!
+28. :q!
