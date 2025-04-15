@@ -59,7 +59,7 @@ local cmp = require('cmp')
 require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
-    preselect = 'item',
+    --preselect = 'item',
     completion = {
         completopt = 'menu,menuone,noinsert'
     },

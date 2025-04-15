@@ -1,5 +1,8 @@
-
 vim.g.mapleader = " "
+
+vim.keymap.set("n", "+", "<C-a>")
+vim.keymap.set("n", "-", "<C-x>")
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -13,21 +16,14 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "=ap", "ma=ap'a")
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
-vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
-end)
-vim.keymap.set("n", "<leader>svwm", function()
-    require("vim-with-me").StopVimWithMe()
-end)
-
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
+vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -68,10 +64,31 @@ vim.keymap.set(
     "oif err != nil {<CR>}<Esc>O.logger.Error(\"error\", \"error\", err)<Esc>F.;i"
 )
 
-vim.keymap.set("n", "<leader>ca", function()
-    require("cellular-automaton").start_animation("make_it_rain")
+vim.keymap.set("n", "<leader>so", function()
+    vim.cmd("so")
+    print("source!")
 end)
 
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
+vim.keymap.set("n", "<leader>te", ":tabedit<Return>", { silent = true })
+vim.keymap.set("n", "ss", ":split<Return><C-w>w", { silent = true })
+vim.keymap.set("n", "sv", ":vsplit<Return><C-w>w", { silent = true })
+vim.keymap.set("n", "<leader><Space>", "<C-w>w", { silent = true })
+
+vim.keymap.set("", "s<Left>", "<C-w>h")
+vim.keymap.set("", "s<Right>", "<C-w>l")
+vim.keymap.set("", "s<Up>", "<C-w>k")
+vim.keymap.set("", "s<Down>", "<C-w>j")
+
+vim.keymap.set("", "sh", "<C-w>h")
+vim.keymap.set("", "sl", "<C-w>l")
+vim.keymap.set("", "sk", "<C-w>k")
+vim.keymap.set("", "sj", "<C-w>j")
+
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+
+vim.keymap.set("n", "<C-w><Left>", "<C-w><")
+vim.keymap.set("n", "<C-w><Right>", "<C-w><")
+vim.keymap.set("n", "<C-w><Up>", "<C-w><")
+vim.keymap.set("n", "<C-w><Down>", "<C-w><")
+vim.keymap.set("n", "<C-w><Tab>", "<C-w>|")
+
