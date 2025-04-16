@@ -19,13 +19,7 @@
 18. cd .config
 19. If there is a nvim folder there already, rm -r nvim
 20. git clone “https://github.com/lloeffel/nvim”
-21. copy paste this:
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-23. nvim . (there will be a big ol error, just press the down key until u get to the end)
-24. jjjj(enter)(enter)j(enter) (navigating to the lua folder, then lloeffel folder, then packer.lua)
-25. :so 
-26. :PackerSync
-27. :q!
-28. :q!
+21. cd nvim
+22. nvim init.lua
+23. :Lazy sync
 29. when opening a file with nvim, tree sitter may have to update and just let it do its thing, then exit the file and open it again for everything to work
