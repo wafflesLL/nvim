@@ -20,6 +20,5 @@
 19. If there is a nvim folder there already, rm -r nvim
 20. git clone https://github.com/lloeffel/nvim
 21. cd nvim
-22. nvim init.lua
-23. :Lazy sync
+22. nvim .
 29. when opening a file with nvim, tree sitter may have to update and just let it do its thing, then exit the file and open it again for everything to work
