@@ -18,7 +18,7 @@
 17. source .zshrc
 18. cd .config
 19. If there is a nvim folder there already, rm -r nvim
-20. git clone “https://github.com/lloeffel/nvim”
+20. git clone github.com/lloeffel/nvim
 21. cd nvim
 22. nvim init.lua
 23. :Lazy sync
