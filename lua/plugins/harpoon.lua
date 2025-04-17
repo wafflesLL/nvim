@@ -1,17 +1,14 @@
 return {
-  "theprimeagen/harpoon", -- Harpoon plugin
-  lazy = true, -- Lazy-load it when needed
-  config = function()
-    local mark = require("harpoon.mark")
-    local ui = require("harpoon.ui")
-
-    -- Keymaps for Harpoon functionality
-    vim.keymap.set("n", "<leader>a", mark.add_file)               -- Add file to Harpoon
-    vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)           -- Toggle quick menu
-
-    vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)   -- Navigate to file 1
-    vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)   -- Navigate to file 2
-    vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end)   -- Navigate to file 3
-    vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)   -- Navigate to file 4
-  end
+	"ThePrimeagen/harpoon",
+	lazy = false,
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
+	config = true,
+	keys = {
+		{ "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Mark file with harpoon" },
+		{ "<C-h>", "<cmd>lua require('harpoon.ui').nav_next()<cr>", desc = "Go to next harpoon mark" },
+		{ "<C-t>", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", desc = "Go to previous harpoon mark" },
+		{ "<C-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon marks" },
+	},
 }
