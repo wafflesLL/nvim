@@ -19,7 +19,7 @@ If you are transferring from one setup to another, and there are conflicts, you 
 ## Plugins Guide:
 
 ### Lazy:
-
+[folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 * Open Lazy with ```:Lazy```
 * Sync your plugins with ```:Lazy sync```
 
