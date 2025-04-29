@@ -1,5 +1,7 @@
 # nvim
-1. In your zsh shell, type cd
+
+## Setup
+1. In your linux shell, type cd
 2. mkdir nvim
 3. cd nvim
 4. mkdir 0.11.0
@@ -22,3 +24,18 @@
 21. cd nvim
 22. nvim .
 29. when opening a file with nvim, tree sitter may have to update and just let it do its thing, then exit the file and open it again for everything to work
+
+## Custom vim commands:
+
+
+## Plugins Guide:
+
+### Lazy:
+
+Open Lazy with ```:Lazy```
+Sync your plugins with ```:Lazy sync```
+
+### LSP:
+
+
+
