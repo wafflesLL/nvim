@@ -3,7 +3,7 @@
 Prerequizities: have the latest version of nvim installed, and be on a linux system or a windows linux subsystem or mac linux subsystem
 1. ```bash```
 2. ```cd ~```
-3. ```cd .config``` (if there is no .config directory, ```mkdir .config```)
+3. ```cd .config``` (if there is no .config directory, ```mkdir .config``` and then ```cd .config```)
 4. If there is a nvim folder there already, ```rm -r nvim```
 5. ```git clone https://github.com/lloeffel/nvim```
 6. ```cd nvim```
