@@ -20,8 +20,8 @@ If you are transferring from one setup to another, and there are conflicts, you 
 
 ### Lazy:
 
-Open Lazy with ```:Lazy```
-Sync your plugins with ```:Lazy sync```
+* Open Lazy with ```:Lazy```
+* Sync your plugins with ```:Lazy sync```
 
 ### LSP:
 
