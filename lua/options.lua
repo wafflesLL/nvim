@@ -124,4 +124,9 @@ vim.opt.updatetime = 50
 vim.opt.wildignore:append {'*/node-modules/*'}
 
 
+vim.keymap.set('n', 'gh', '<cmd>Lspsaga hover_doc<CR>')
+vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>')
+vim.keymap.set('n', 'gr', '<cmd>Lspsaga rename<CR>')
+vim.keymap.set('n', 'gd', '<cmd>Lspsaga peek_definition<CR>')
+vim.keymap.set('n', '<leader>o', '<cmd>Lspsaga outline<CR>')
 
