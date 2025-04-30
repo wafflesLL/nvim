@@ -11,7 +11,7 @@ Prerequizities: have the latest version of nvim installed, and be on a linux sys
 8. ```:Lazy sync```
 9. when opening a file with nvim, tree sitter may have to update and just let it do its thing, then exit the file and open it again for everything to work
 
-If you are transferring from one setup to another, and there are conflicts, you may have to delete files in your .local folder which correspond to corrupted plugins
+If you are transferring from one setup to another, and there are conflicts, you may have to delete files/directories in your ~/.local/share/ folder which correspond to corrupted plugins
 
 ## Custom vim commands: (leader is SPACE) (defined in init.lua)
 ### Incrementing
