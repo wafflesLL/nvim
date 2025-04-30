@@ -34,6 +34,31 @@ If you are transferring from one setup to another, and there are conflicts, you 
 * ```<leader>d``` deletes like ```d``` but does not yank the deleted text (VISUAL, NORMAL)
 ### TMUX
 
+### Search and Replace
+* ```<leader>s``` takes the word the cursor is on, and allows you to edit every reference of that word simultaneously in the code (NORMAL)
+### Screen splitting/Tabbing
+* ```<leader>te``` creates a new tab (NORMAL)
+* ```ss``` does a horizontal split and navigates to the new window (NORMAL)
+* ```sv``` does a vertical split and navigates to the new window (NORMAL)
+* ```<leader><SPACE>``` navigates to the next window (NORMAL)
+* ```s<TAB>``` fullscreen for current window (NORMAL)
+* ```<leader>s<TAB>``` equal sizes for all windows (NORMAL)
+#### Arrow key movement (for the psychos out there)
+* ```s<UP>``` navigates to the window above the current (NORMAL)
+* ```s<DOWN>``` navigates to the window below the current (NORMAL)
+* ```s<LEFT>``` navigates to the window to the left of the current (NORMAL)
+* ```s<RIGHT>``` navigates to the window to the right of the current (NORMAL)
+#### HJKL key movement (for the chads out there)
+* ```sk``` navigates to the window above the current (NORMAL)
+* ```sj``` navigates to the window below the current (NORMAL)
+* ```sh``` navigates to the window to the left of the current (NORMAL)
+* ```sl``` navigates to the window to the right of the current (NORMAL)
+#### Ctrl-w movement with arrow keys (for the MEGA psychos out there)
+* ```Ctrl + w<UP>``` navigates to the window above the current (NORMAL)
+* ```Ctrl + w<DOWN>``` navigates to the window below the current (NORMAL)
+* ```Ctrl + w<LEFT>``` navigates to the window to the left of the current (NORMAL)
+* ```Ctrl + w<RIGHT>``` navigates to the window to the right of the current (NORMAL)
+### Misc
 
 
 ## Plugins Guide:
