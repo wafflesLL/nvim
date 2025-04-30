@@ -59,6 +59,7 @@ If you are transferring from one setup to another, and there are conflicts, you 
 * ```Ctrl + w<LEFT>``` navigates to the window to the left of the current (NORMAL)
 * ```Ctrl + w<RIGHT>``` navigates to the window to the right of the current (NORMAL)
 ### Misc
+* ```Ctrl + a``` highlights all of the file (NORMAL)
 
 
 ## Plugins Guide:
