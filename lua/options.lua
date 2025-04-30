@@ -1,7 +1,7 @@
-
+--increment the numbers your cursor is on
 vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "-", "<C-x>")
-
+-- escape to the directory
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -91,9 +91,13 @@ vim.keymap.set("n", "<C-w><Up>", "<C-w><")
 vim.keymap.set("n", "<C-w><Down>", "<C-w><")
 vim.keymap.set("n", "<C-w><Tab>", "<C-w>|")
 
---set
---vim.opt.guicursor = ""
+--Lspsaga
+vim.keymap.set('n', 'gh', '<cmd>Lspsaga hover_doc<CR>')
+vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>')
+vim.keymap.set('n', 'gr', '<cmd>Lspsaga rename<CR>')
+vim.keymap.set('n', '<leader>o', '<cmd>Lspsaga outline <CR>')
 
+--options
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -123,10 +127,4 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.wildignore:append {'*/node-modules/*'}
 
-
-vim.keymap.set('n', 'gh', '<cmd>Lspsaga hover_doc<CR>')
-vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>')
-vim.keymap.set('n', 'gr', '<cmd>Lspsaga rename<CR>')
-vim.keymap.set('n', 'gd', '<cmd>Lspsaga peek_definition<CR>')
-vim.keymap.set('n', '<leader>o', '<cmd>Lspsaga outline<CR>')
 
