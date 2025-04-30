@@ -1,6 +1,6 @@
 # nvim
 ## Setup
-Prerequizities: have the latest version of nvim installed, and be on a linux system or a windows linux subsystem or mac linux subsystem, and have a "Nerd Font" downloaded to your machine so that your command shell can process icons. I use AtkynsonMono Nerd Font you can find and download it [here](https://www.nerdfonts.com/font-downloads)
+Prerequisite: have the latest version of nvim installed, and be on a linux system or a windows linux subsystem or mac linux subsystem, and have a "Nerd Font" downloaded to your machine so that your command shell can process icons. I use AtkynsonMono Nerd Font you can find and download it [here](https://www.nerdfonts.com/font-downloads)
 1. Open whatever command shell you prefer
 2. ```bash```
 3. ```cd ~```
