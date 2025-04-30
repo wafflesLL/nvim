@@ -13,7 +13,27 @@ Prerequizities: have the latest version of nvim installed, and be on a linux sys
 
 If you are transferring from one setup to another, and there are conflicts, you may have to delete files in your .local folder which correspond to corrupted plugins
 
-## Custom vim commands:
+## Custom vim commands: (leader is SPACE) (defined in init.lua)
+### Incrementing
+* ```+``` increments a number the cursor is hovering (NORMAL)
+* ```-``` decrements a number the cursor is hovering (NORMAL)
+### Directory Navigation
+* ```<leader>pv``` goes out to the directory (NORMAL)
+### File Navigation
+* ```Ctrl + d``` scrolls down quickly when held down (NORMAL)
+* ```Ctrl + u``` scrolls up quickly when held down (NORMAL)
+### Formatting
+* ```=ap``` format the code block you are in (NORMAL)
+* ```<leader>f``` format file based on the LSP (NORMAL)
+### LSP
+* ```<leader>zig``` restart the LSP (NORMAL)
+### Copy/Paste
+* ```<leader>p``` pastes over your visual selection without yanking the replaced text (VISUAL)
+* ```<leader>y``` copies like ```y``` would but to your system clipboard (THIS WILL NOT WORK THROUGH SSH---unless you are using X-forwarding) (VISUAL, NORMAL)
+* ```<leader>Y``` copies like ```Y``` would but to your system clipboard (THIS WILL NOT WORK THROUGH SSH---unless you are using X-forwarding) (VISUAL, NORMAL)
+* ```<leader>d``` deletes like ```d``` but does not yank the deleted text (VISUAL, NORMAL)
+### TMUX
+
 
 
 ## Plugins Guide:
