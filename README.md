@@ -1,14 +1,15 @@
 # nvim
 ## Setup
 Prerequizities: have the latest version of nvim installed, and be on a linux system or a windows linux subsystem or mac linux subsystem
-1. ```bash```
-2. ```cd ~```
-3. ```cd .config``` (if there is no .config directory, ```mkdir .config``` and then ```cd .config```)
-4. If there is a nvim folder there already, ```rm -r nvim```
-5. ```git clone https://github.com/lloeffel/nvim```
-6. ```cd nvim```
-7. ```nvim .```
-8. ```:Lazy sync```
+1. Open whatever command shell you prefer
+2. ```bash```
+3. ```cd ~```
+4. ```cd .config``` (if there is no .config directory, ```mkdir .config``` and then ```cd .config```)
+5. If there is a nvim folder there already, ```rm -r nvim```
+6. ```git clone https://github.com/lloeffel/nvim```
+7. ```cd nvim```
+8. ```nvim .```
+9. ```:Lazy sync```
 
 When opening a file with nvim, tree sitter may have to update and just let it do its thing, then exit the file and open it again for everything to work
 
