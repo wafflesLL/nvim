@@ -9,7 +9,8 @@ Prerequizities: have the latest version of nvim installed, and be on a linux sys
 6. ```cd nvim```
 7. ```nvim .```
 8. ```:Lazy sync```
-9. when opening a file with nvim, tree sitter may have to update and just let it do its thing, then exit the file and open it again for everything to work
+
+When opening a file with nvim, tree sitter may have to update and just let it do its thing, then exit the file and open it again for everything to work
 
 If you are transferring from one setup to another, and there are conflicts, you may have to delete files/directories in your ~/.local/share/ folder which correspond to corrupted plugins
 
