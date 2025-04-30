@@ -4,10 +4,7 @@ vim.keymap.set("n", "-", "<C-x>")
 -- escape to the directory
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
-vim.keymap.set("n", "J", "mzJ`z")
+--fast scroll`
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
@@ -21,7 +18,6 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-
 vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 
 -- This is going to get me cancelled
@@ -37,31 +33,6 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
-vim.keymap.set(
-    "n",
-    "<leader>ee",
-    "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
-)
-
-vim.keymap.set(
-    "n",
-    "<leader>ea",
-    "oassert.NoError(err, \"\")<Esc>F\";a"
-)
-
-vim.keymap.set(
-    "n",
-    "<leader>ef",
-    "oif err != nil {<CR>}<Esc>Olog.Fatalf(\"error: %s\\n\", err.Error())<Esc>jj"
-)
-
-vim.keymap.set(
-    "n",
-    "<leader>el",
-    "oif err != nil {<CR>}<Esc>O.logger.Error(\"error\", \"error\", err)<Esc>F.;i"
-)
 
 vim.keymap.set("n", "<leader>so", function()
     vim.cmd("so")
@@ -91,12 +62,6 @@ vim.keymap.set("n", "<C-w><Up>", "<C-w><")
 vim.keymap.set("n", "<C-w><Down>", "<C-w><")
 vim.keymap.set("n", "<C-w><Tab>", "<C-w>|")
 
---Lspsaga
-vim.keymap.set('n', 'gh', '<cmd>Lspsaga hover_doc<CR>')
-vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>')
-vim.keymap.set('n', 'gr', '<cmd>Lspsaga rename<CR>')
-vim.keymap.set('n', '<leader>o', '<cmd>Lspsaga outline <CR>')
-
 --options
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -125,6 +90,4 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-vim.opt.wildignore:append {'*/node-modules/*'}
-
-
+vim.opt.wildignore:append { '*/node-modules/*' }
