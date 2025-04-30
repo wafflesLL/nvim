@@ -66,7 +66,8 @@ vim.keymap.set("n", "<C-w><Left>", "<C-w><")
 vim.keymap.set("n", "<C-w><Right>", "<C-w><")
 vim.keymap.set("n", "<C-w><Up>", "<C-w><")
 vim.keymap.set("n", "<C-w><Down>", "<C-w><")
-vim.keymap.set("n", "<C-w><Tab>", "<C-w>|")
+vim.keymap.set("n", "s<Tab>", "<C-w>|<C-w>_")
+vim.keymap.set("n", "<leader>s<Tab>", "<C-w>=")
 
 --highlight everything
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
