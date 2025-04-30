@@ -1,44 +1,58 @@
 --increment the numbers your cursor is on
 vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "-", "<C-x>")
+
 -- escape to the directory
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 --fast scroll`
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+--input a pattern "/pattern" and then use these to navigate between the next ones in ur pattern
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+--format code block
 vim.keymap.set("n", "=ap", "ma=ap'a")
+
+--restart LSP
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
--- next greatest remap ever : asbjornHaland
+-- copy to clipboard 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- delete without copying
 vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 
--- This is going to get me cancelled
-vim.keymap.set("i", "<C-c>", "<Esc>")
-
+--removing nasty Ex mode
 vim.keymap.set("n", "Q", "<nop>")
+
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+--format file based on lsp standards
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
+--navigate to quick fix locations
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+--search and replace shortcut
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+--SOURCE!
 vim.keymap.set("n", "<leader>so", function()
     vim.cmd("so")
     print("source!")
 end)
 
+--screen splitting shortcuts
 vim.keymap.set("n", "<leader>te", ":tabedit<Return>", { silent = true })
 vim.keymap.set("n", "ss", ":split<Return><C-w>w", { silent = true })
 vim.keymap.set("n", "sv", ":vsplit<Return><C-w>w", { silent = true })
@@ -54,13 +68,15 @@ vim.keymap.set("", "sl", "<C-w>l")
 vim.keymap.set("", "sk", "<C-w>k")
 vim.keymap.set("", "sj", "<C-w>j")
 
-vim.keymap.set("n", "<C-a>", "gg<S-v>G")
-
 vim.keymap.set("n", "<C-w><Left>", "<C-w><")
 vim.keymap.set("n", "<C-w><Right>", "<C-w><")
 vim.keymap.set("n", "<C-w><Up>", "<C-w><")
 vim.keymap.set("n", "<C-w><Down>", "<C-w><")
 vim.keymap.set("n", "<C-w><Tab>", "<C-w>|")
+
+--highlight everything
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+
 
 --options
 vim.opt.nu = true
