@@ -72,7 +72,6 @@ vim.keymap.set("n", "<leader>s<Tab>", "<C-w>=")
 --highlight everything
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
-
 --options
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -102,3 +101,12 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 vim.opt.wildignore:append { '*/node-modules/*' }
+
+--turn off autocommenting
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  callback = function()
+    vim.opt.formatoptions:remove({ "c", "r", "o" })
+  end,
+})
+
