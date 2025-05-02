@@ -18,6 +18,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
+
+--PROFILE
+local active_user = "lloeffel" -- Change this to switch profiles
+local ok, profile = pcall(require, "profiles." .. active_user)
+if not ok then
+    vim.notify("Failed to load user profile: " .. active_user, vim.log.levels.ERROR)
+    profile = {}
+end
+_G.user_profile = profile
+user_profile.ghost_text_enabled = user_profile.ghost_text_enabled ~= false
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 require("options")

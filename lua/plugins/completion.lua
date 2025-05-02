@@ -21,7 +21,7 @@ return {
         },
         completion = {
             documentation = { auto_show = false },
-            ghost_text = { enabled = true },
+            ghost_text = { enabled = _G.user_profile.ghost_text_enabled },
         },
         snippets = { preset = 'luasnip' },
         sources = {
