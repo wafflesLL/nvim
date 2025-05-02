@@ -37,7 +37,7 @@ return {
     -- Mason Setup
     require('mason').setup({})
     require('mason-lspconfig').setup({
-      ensure_installed = { 'lua_ls', 'rust_analyzer', 'eslint', 'clangd' },
+      ensure_installed = { 'lua_ls', 'rust_analyzer', 'eslint', 'clangd', 'html', 'cssls' },
       handlers = {
         function(server_name)
           lspconfig[server_name].setup({})
