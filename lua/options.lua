@@ -2,6 +2,9 @@
 vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "-", "<C-x>")
 
+--go back to normal mode (for exiting vim terminal)
+vim.keymap.set("t", "<C-n>", "<C-\\><C-n>");
+
 -- escape to the directory
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
