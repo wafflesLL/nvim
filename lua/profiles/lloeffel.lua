@@ -1,5 +1,6 @@
 return {
     ghost_text_enabled = true,
-    colorscheme = 'catppuccin',
+    colorscheme = 'gruvbox',
     transparency = false,
+    dark_mode = false,
 }

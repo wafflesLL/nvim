@@ -30,6 +30,7 @@ _G.user_profile = profile
 user_profile.ghost_text_enabled = user_profile.ghost_text_enabled ~= false
 user_profile.colorscheme = user_profile.colorscheme
 user_profile.transparency = user_profile.transparency ~= false
+user_profile.dark_mode = user_profile.dark_mode ~= false
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

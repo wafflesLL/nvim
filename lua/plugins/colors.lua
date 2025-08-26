@@ -26,27 +26,46 @@ return {
         pattern = '*',
       })
 
-      function Gruvbox(isTransparent)
+      function Gruvbox(isTransparent,dark)
         isTransparent = isTransparent or false
+
+        dark = dark or _G.user_profile.dark_mode
+        local theme = 'dark'
+
+        if dark == false then
+          theme = 'light'
+        end
+        vim.o.background = theme
         require("gruvbox").setup({
           transparent_mode = isTransparent,
         })
         vim.cmd.colorscheme("gruvbox")
       end
 
-      function Onedark(isTransparent)
+      function Onedark(isTransparent,dark)
         isTransparent = isTransparent or false
+        dark = dark or _G.user_profile.dark_mode
+        local theme = 'dark'
+
+        if dark == false then
+          theme = 'light'
+        end
         require("onedark").setup({
-          style = 'dark',
+          style = theme,
           transparent = isTransparent,
         })
         vim.cmd.colorscheme("onedark")
       end
 
-      function Catp(isTransparent)
+      function Catp(isTransparent, dark)
         isTransparent = isTransparent or false
+        dark = dark or _G.user_profile.dark_mode
+        local theme = 'mocha'
+        if dark == false then
+          theme = 'latte'
+        end
         require("catppuccin").setup({
-          flavour = "latte",
+          flavour = theme,
           transparent_background = isTransparent,
         })
         vim.cmd.colorscheme("catppuccin")
