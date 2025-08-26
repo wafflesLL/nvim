@@ -28,6 +28,8 @@ if not ok then
 end
 _G.user_profile = profile
 user_profile.ghost_text_enabled = user_profile.ghost_text_enabled ~= false
+user_profile.colorscheme = user_profile.colorscheme
+user_profile.transparency = user_profile.transparency ~= false
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

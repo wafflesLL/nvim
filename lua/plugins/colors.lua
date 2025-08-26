@@ -6,6 +6,11 @@ return {
     lazy = false,
   },
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
+  },
+  {
     "navarasu/onedark.nvim",
     name = "onedark",
     priority = 1000,
@@ -38,11 +43,23 @@ return {
         vim.cmd.colorscheme("onedark")
       end
 
-      function SetCS(color, isTransparent)
-        color = color or 'onedark'
+      function Catp(isTransparent)
         isTransparent = isTransparent or false
+        require("catppuccin").setup({
+          flavour = "latte",
+          transparent_background = isTransparent,
+        })
+        vim.cmd.colorscheme("catppuccin")
+      end
+
+      function SetCS(color, isTransparent)
+
+        color = color or _G.user_profile.colorscheme
+        isTransparent = isTransparent or _G.user_profile.transparency
         if color == 'gruvbox' then
           Gruvbox(isTransparent)
+        elseif color == 'catppuccin' then
+          Catp(isTransparent)
         else
           Onedark(isTransparent)
         end
@@ -51,5 +68,5 @@ return {
       _G.SetCS = SetCS  -- optional global function
       SetCS()  -- default on start
     end
-  }
+  },
 }
